@@ -1,10 +1,15 @@
+//C√ìDIGO PARA LER UM ARQUIVO TXT EXISTENTE E 
+//CRIAR OUTRO ARQUIVO TXT COM O MESMO CONTE√öDO EM MAI√öSCULAS
+//O USU√ÅRIO INFORMAR√Å VIA TECLADO O NOME DOS DOIS ARQUIVOS
+
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #include<locale.h>
 #include <ctype.h>
 
-//funÁ„o auxiliar para cÛpia do conte˙do dos arquivos//
+//fun√ß√£o auxiliar para c√≥pia do conte√∫do dos arquivos//
 void copiarConteudo(FILE *f, FILE *g){
     char reader[1000];
     int i;
@@ -17,14 +22,14 @@ void copiarConteudo(FILE *f, FILE *g){
 
 int main(void){
 
-   //DeclaraÁ„o de varÌaveis//
+   //Declara√ß√£o de var√≠aveis//
    setlocale(LC_ALL,"portuguese");
    FILE *f, *g;
    char nomeArq1[50], nomeArq2[50];
    int erro1, erro2;
 
-   //Leitura do arquivo original com verificaÁ„o, nome fornecido pelo teclado //
-   printf("\t\t\t\tBEM VINDO!!!\n\nDigite o nome do arquivo a ser lido (com a extens„o):\n");
+   //Leitura do arquivo original com verifica√ß√£o, nome fornecido pelo teclado //
+   printf("\t\t\t\tBEM VINDO!!!\n\nDigite o nome do arquivo a ser lido (com a extens√£o):\n");
    scanf("%s", &nomeArq1);
    fflush(stdin);
    printf("\n");
@@ -34,8 +39,8 @@ int main(void){
             printf("Erro ao abrir o arquivo!\n");
             exit(1);
             }
-   //CriaÁ„o do segundo arquivo que receber· o conte˙do do arquivo original com verificaÁ„o, nome fornecido pelo teclado//
-   printf("Digite o nome do arquivo a ser criado(com a extens„o)\n");
+   //Cria√ß√£o do segundo arquivo que receber√° o conte√∫do do arquivo original com verifica√ß√£o, nome fornecido pelo teclado//
+   printf("Digite o nome do arquivo a ser criado(com a extens√£o)\n");
    scanf("%s", &nomeArq2);
    fflush(stdin);
    printf("\n");
@@ -45,14 +50,14 @@ int main(void){
             printf("Erro ao abrir o arquivo!\n");
             exit(1);
             }
-   //Chamada da funÁ„o auxiliar para copiar e escrever o conte˙do do arquivo original em mai˙sculas para o segundo arquivo//
+   //Chamada da fun√ß√£o auxiliar para copiar e escrever o conte√∫do do arquivo original em mai√∫sculas para o segundo arquivo//
    copiarConteudo(f,g);
 
    printf("\nPressione qualquer tecla para continuar...");
    getchar();
-   printf("\nO ARQUIVO \"%s\" FOI CRIADO COM O CONTE⁄DO DO ARQUIVO \"%s\"!\n\n", nomeArq2,nomeArq1);
+   printf("\nO ARQUIVO \"%s\" FOI CRIADO COM O CONTE√öDO DO ARQUIVO \"%s\"!\n\n", nomeArq2,nomeArq1);
 
-   //Fechamento dos dois arquivos com verificaÁ„o exibida para o usu·rio//
+   //Fechamento dos dois arquivos com verifica√ß√£o exibida para o usu√°rio//
    erro1 = fclose(f);
        if(erro1==0){
            printf("Arquivo \"%s\" encerrado com sucesso!\n", nomeArq1);
