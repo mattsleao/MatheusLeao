@@ -14,7 +14,7 @@ int main(void)
 {
     setlocale(LC_ALL,"portuguese");
 
-    //CriaÁ„o e abertura do arquivo bin·rio com verificaÁ„o//
+    //Cria√ß√£o e abertura do arquivo bin√°rio com verifica√ß√£o//
     FILE *f;
     f = fopen("Alunos.dat", "wb");
         if(f==NULL){
@@ -22,20 +22,20 @@ int main(void)
             exit(1);
         }
 
-    //InformaÁ„o do n˙mero de alunos//
+    //Informa√ß√£o do n√∫mero de alunos//
     int qtd;
     printf("\t\t\t\tBEM VINDO!!!\n\nDigite a quantidade de alunos a serem registrados:\n");
     scanf("%d", &qtd);
     fflush(stdin);
     printf("\n");
 
-    //DeclaraÁ„o de vari·vel struct e auxiliares//
+    //Declara√ß√£o de vari√°vel struct e auxiliares//
     Classe *ptrAlunos;
     int i,j;
     float maiornota=0;
     int erro;
 
-    //AlocaÁ„o de memÛria e preenchimento dos dados//
+    //Aloca√ß√£o de mem√≥ria e preenchimento dos dados//
     ptrAlunos = (Classe*) malloc (qtd*sizeof(Classe));
     if(ptrAlunos != NULL){
         for(i=0;i<qtd;i++){
@@ -47,10 +47,10 @@ int main(void)
             printf("\n");
         }
     }else{
-        printf("N„o foi possÌvel alocar memÛria");
+        printf("N√£o foi poss√≠vel alocar mem√≥ria");
     }
 
-    //GravaÁ„o dos dados em arquivo bin·rio com verificaÁ„o para o usu·rio//
+    //Grava√ß√£o dos dados em arquivo bin√°rio com verifica√ß√£o para o usu√°rio//
     for(i=0;i<qtd;i++){
         fwrite(ptrAlunos[i].nome,sizeof(Classe),qtd,f);
         fwrite(&ptrAlunos[i].nota,sizeof(Classe),qtd,f);
@@ -60,7 +60,7 @@ int main(void)
         }else{
             printf("\tERRO AO SALVAR O ARQUIVO!\n");
         }
-    //Fechamento do arquivo criado com verificaÁ„o para o usu·rio//
+    //Fechamento do arquivo criado com verifica√ß√£o para o usu√°rio//
     erro = fclose(f);
         if(erro==0){
            printf("\tArquivo encerrado com sucesso!\n");
@@ -69,10 +69,10 @@ int main(void)
                 }
     printf("\nPressione qualquer tecla para continuar...");
     getchar();
-    //Reabertura do arquivo para leitura e verificaÁ„o//
+    //Reabertura do arquivo para leitura e verifica√ß√£o//
     f=fopen("Alunos.dat","rb");
         if(f!=NULL){
-                printf("\n\tArquivo reaberto para an·lise dos dados...\n");
+                printf("\n\tArquivo reaberto para an√°lise dos dados...\n");
         }
 
     for(i=0;i<qtd;i++){
@@ -85,11 +85,11 @@ int main(void)
     }
     printf("\nPressione qualquer tecla para continuar...");
     getchar();
-    //ExibiÁ„o do nome do aluno de maior nota//
-    printf("\n\n\n\n\nO(A) ALUNO(A) COM A MAIOR NOTA FINAL …:\n");
+    //Exibi√ß√£o do nome do aluno de maior nota//
+    printf("\n\n\n\n\nO(A) ALUNO(A) COM A MAIOR NOTA FINAL √â:\n");
     printf("\t\t%s  :  %.2f\n\n", ptrAlunos[j].nome,ptrAlunos[j].nota);
 
-    //Fechamento do arquivo criado com verificaÁ„o para o usu·rio//
+    //Fechamento do arquivo criado com verifica√ß√£o para o usu√°rio//
     erro = fclose(f);
         if(erro==0){
            printf("\tArquivo fechado com sucesso!\n");
@@ -97,7 +97,7 @@ int main(void)
                printf("\tERRO AO FECHAR O ARQUIVO!\n");
                 }
 
-    //DesalocaÁ„o de memÛria//
+    //Desaloca√ß√£o de mem√≥ria//
     free(ptrAlunos);
     ptrAlunos = NULL;
 
