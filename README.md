@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @mattsleao
 - 👀 I’m interested in learning
-- 🌱 I’m currently learning C
+- 🌱 I’m currently learning C, C#, HTML5, CSS and JS
 - 💞️ I’m looking to collaborate on whatever I can
 - 📫 How to reach me https://www.instagram.com/matheussleao/?hl=pt
 
