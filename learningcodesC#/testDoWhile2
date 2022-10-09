@@ -1,0 +1,19 @@
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+    
+    int numero;
+
+    Console.WriteLine("Digite um número");
+    numero = int.Parse(Console.ReadLine());
+
+    do
+    {
+      numero = numero+2;
+      Console.WriteLine("{0}\n",numero);
+    } while(numero<1000);
+
+    Console.ReadKey();
+  }
+}
