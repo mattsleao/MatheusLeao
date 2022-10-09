@@ -1,0 +1,20 @@
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+    double numero, raiz;
+    
+    Console.WriteLine("Digite um número: ");
+    numero = double.Parse(Console.ReadLine());
+
+    while(numero>=0){
+      raiz = Math.Sqrt(numero);
+      Console.WriteLine("A raiz de {0} é {1}",numero,raiz);
+      Console.WriteLine("Digite um número: ");
+      numero = double.Parse(Console.ReadLine());
+    }
+
+    Console.WriteLine("não é possível extrair raiz quadrada de um número negativo no conjunto dos números reais");
+    Console.ReadKey();
+  }
+}
